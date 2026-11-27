@@ -1,0 +1,29 @@
+# Entornos virtuales y dependencias
+venv/
+.venv/
+env/
+node_modules/
+
+# Archivos de Python y caches
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# Credenciales y secretos (CRÍTICO)
+.env
+*.env
+*secret*
+*.pem
+*.key
+
+# Bases de datos locales y logs
+*.sqlite3
+*.db
+*.log
+
+# Builds e IDEs
+dist/
+build/
+.idea/
+.vscode/

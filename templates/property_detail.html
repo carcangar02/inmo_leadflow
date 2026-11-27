@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ prop.title }} | Consulting Inmobiliario de Villaviciosa</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .apple-card {
+            background: #ffffff;
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            box-shadow: 0 4px 24px -2px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .apple-card:hover {
+            box-shadow: 0 20px 40px -6px rgba(0, 0, 0, 0.08);
+            transform: translateY(-2px);
+        }
+        .energy-badge-A { background-color: #10b981; color: #ffffff; }
+        .energy-badge-B { background-color: #34d399; color: #064e3b; }
+        .energy-badge-C { background-color: #facc15; color: #713f12; }
+    </style>
+</head>
+<body class="bg-[#fafafa] text-[#1d1d1f] antialiased selection:bg-emerald-500 selection:text-white">
+
+    <!-- TOP ANNOUNCEMENT & CONTACT BAR -->
+    <div class="bg-[#1d1d1f] text-white text-xs py-2.5 px-4">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2 text-center sm:text-left">
+            <div class="flex items-center gap-3">
+                <span class="bg-emerald-500 text-black font-extrabold text-[10px] px-2 py-0.5 rounded-full uppercase tracking-wider">Oficial</span>
+                <span class="text-slate-300">Consulting Inmobiliario de Villaviciosa &bull; CC VillaCenter, Local B26</span>
+            </div>
+            <div class="flex items-center gap-6 font-semibold">
+                <a href="tel:916165195" class="hover:text-emerald-400 transition flex items-center gap-1.5">
+                    <span>📞 916 165 195</span>
+                </a>
+                <a href="https://wa.me/34611031014" target="_blank" class="hover:text-emerald-400 transition flex items-center gap-1.5">
+                    <span>💬 611 031 014</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN NAVBAR -->
+    <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-black/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="/" class="flex items-center gap-3 group">
+                <img src="/static/logo_consulting.png" alt="Consulting Inmobiliario Villaviciosa" class="h-10 w-auto object-contain">
+                <div class="hidden md:flex flex-col">
+                    <span class="font-extrabold text-sm tracking-tight text-[#1d1d1f]">CONSULTING INMOBILIARIO</span>
+                    <span class="text-[10px] font-bold text-emerald-600 tracking-widest uppercase">Villaviciosa de Odón</span>
+                </div>
+            </a>
+
+            <!-- Navigation Links -->
+            <nav class="hidden lg:flex items-center gap-8 text-sm font-semibold text-[#1d1d1f]">
+                <a href="/" class="text-[#86868b] hover:text-[#1d1d1f] transition">Inicio</a>
+                <a href="/#inmuebles" class="text-emerald-600 font-bold">Catálogo</a>
+                <a href="/vender" class="text-[#86868b] hover:text-[#1d1d1f] transition">Vender</a>
+                <a href="/alquilar" class="text-[#86868b] hover:text-[#1d1d1f] transition">Alquilar</a>
+                <a href="/quienes-somos" class="text-[#86868b] hover:text-[#1d1d1f] transition">Quiénes Somos</a>
+                <a href="/contacto" class="text-[#86868b] hover:text-[#1d1d1f] transition">Contacto</a>
+            </nav>
+
+            <div class="flex items-center gap-3">
+                <a href="/#inmuebles" class="inline-flex items-center gap-1.5 text-xs font-bold bg-slate-100 hover:bg-slate-200 text-[#1d1d1f] px-4 py-2.5 rounded-full transition">
+                    &larr; Volver al Catálogo
+                </a>
+                <a href="/dashboard" class="hidden sm:inline-flex items-center gap-1.5 bg-[#1d1d1f] hover:bg-black text-white text-xs font-bold px-4 py-2.5 rounded-full transition shadow">
+                    <span>Área CRM</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- BREADCRUMB & HEADER -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        
+        <!-- Breadcrumb -->
+        <nav class="flex items-center gap-2 text-xs font-semibold text-[#86868b] mb-4">
+            <a href="/" class="hover:text-[#1d1d1f]">Inicio</a>
+            <span>/</span>
+            <a href="/#inmuebles" class="hover:text-[#1d1d1f]">Inmuebles</a>
+            <span>/</span>
+            <span class="text-emerald-600 font-bold">{{ prop.zone }}</span>
+            <span>/</span>
+            <span class="text-[#1d1d1f] truncate max-w-xs sm:max-w-md">Ref #{{ prop.id }}</span>
+        </nav>
+
+        <!-- Title & Badges Bar -->
+        <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-8">
+            <div class="space-y-3 max-w-4xl">
+                <div class="flex flex-wrap items-center gap-2.5">
+                    <span class="bg-emerald-100 text-emerald-800 text-xs font-extrabold px-3 py-1 rounded-full uppercase tracking-wider">
+                        📍 {{ prop.zone }}
+                    </span>
+                    <span class="bg-slate-100 text-[#1d1d1f] text-xs font-bold px-3 py-1 rounded-full">
+                        {{ prop.property_type }}
+                    </span>
+                    <span class="energy-badge-{{ prop.energy_rating }} text-xs font-bold px-3 py-1 rounded-full">
+                        ⚡ Eficiencia {{ prop.energy_rating }} ({{ prop.energy_kwh }})
+                    </span>
+                    <span class="text-xs text-[#86868b] font-medium">Ref. CIV-00{{ prop.id }}</span>
+                </div>
+                <h1 class="text-2xl sm:text-4xl lg:text-5xl font-black text-[#1d1d1f] tracking-tight leading-tight">
+                    {{ prop.title }}
+                </h1>
+                <p class="text-xs sm:text-sm text-[#86868b] flex items-center gap-2">
+                    <span>📍 Villaviciosa de Odón, Madrid</span> &bull; 
+                    <span>Orientación {{ prop.orientation }}</span> &bull; 
+                    <span>Año de Construcción: {{ prop.year_built }}</span>
+                </p>
+            </div>
+
+            <!-- Price Card -->
+            <div class="flex flex-col sm:flex-row lg:flex-col items-baseline sm:items-center lg:items-end justify-between gap-3 bg-white p-6 rounded-3xl border border-black/5 shadow-sm">
+                <div class="text-right">
+                    <p class="text-[11px] font-bold text-[#86868b] uppercase tracking-wider">Precio de Venta</p>
+                    <p class="text-3xl sm:text-4xl lg:text-5xl font-black text-[#1d1d1f] tracking-tight">
+                        {{ "{:,.0f}".format(prop.price).replace(",", ".") }} €
+                    </p>
+                </div>
+                <p class="text-xs font-bold text-emerald-600">
+                    {{ "{:,.0f}".format(prop.price / prop.area_m2).replace(",", ".") }} €/m²
+                </p>
+            </div>
+        </div>
+
+        <!-- 5-PHOTO EDITORIAL MOSAIC -->
+        <section class="mb-14">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 h-[420px] sm:h-[560px]">
+                
+                <!-- Main Large Photo (Col-7) -->
+                <div class="lg:col-span-7 h-full rounded-[2.5rem] overflow-hidden shadow-sm relative group cursor-pointer" onclick="openLightbox(0)">
+                    <img id="main-gallery-img" src="{{ prop.gallery[0] if prop.gallery else prop.image_url }}" alt="{{ prop.title }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-700 ease-out">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-80 group-hover:opacity-60 transition"></div>
+                    <span class="absolute top-5 left-5 bg-white/90 backdrop-blur-md text-[#1d1d1f] text-xs font-black px-4 py-1.5 rounded-full shadow">
+                        Foto Principal &bull; Fachada
+                    </span>
+                    <span class="absolute bottom-5 left-5 text-white text-xs font-medium bg-black/60 backdrop-blur-md px-3.5 py-1.5 rounded-full flex items-center gap-1.5">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                        Ampliar Galería
+                    </span>
+                </div>
+
+                <!-- 4 Detail Photos Grid (Col-5, 2x2) -->
+                <div class="hidden lg:grid lg:col-span-5 grid-cols-2 gap-4 h-full">
+                    {% for img_url in prop.gallery[1:5] %}
+                    <div class="rounded-3xl overflow-hidden shadow-sm relative group cursor-pointer" onclick="openLightbox({{ loop.index }})">
+                        <img src="{{ img_url }}" alt="Detalle {{ loop.index }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 ease-out">
+                        <div class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition"></div>
+                        <span class="absolute bottom-3 left-3 bg-white/90 backdrop-blur-md text-[11px] font-bold text-[#1d1d1f] px-2.5 py-1 rounded-full shadow">
+                            {% if loop.index == 1 %}Salón{% elif loop.index == 2 %}Cocina{% elif loop.index == 3 %}Suite{% else %}Exterior{% endif %}
+                        </span>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <!-- Mobile Photo Indicator Bar -->
+            <div class="flex lg:hidden items-center justify-between text-xs text-[#86868b] mt-3 px-2">
+                <span>Fotografías Oficiales en Alta Resolución</span>
+                <span class="font-bold text-[#1d1d1f]">{{ prop.gallery|length }} Fotos Disponibles</span>
+            </div>
+        </section>
+
+        <!-- KEY STATS STRIP -->
+        <section class="mb-14">
+            <div class="apple-card rounded-3xl p-6 sm:p-8 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 text-center">
+                <div class="space-y-1 border-r border-slate-100 last:border-0">
+                    <p class="text-[11px] font-bold text-[#86868b] uppercase tracking-wider">Superficie</p>
+                    <p class="text-2xl font-black text-[#1d1d1f]">{{ prop.area_m2 }} m²</p>
+                    <p class="text-[11px] text-[#86868b]">Construidos</p>
+                </div>
+                <div class="space-y-1 border-r border-slate-100 last:border-0">
+                    <p class="text-[11px] font-bold text-[#86868b] uppercase tracking-wider">Parcela</p>
+                    <p class="text-2xl font-black text-[#1d1d1f]">{% if prop.plot_m2 > 0 %}{{ prop.plot_m2 }} m²{% else %}N/D{% endif %}</p>
+                    <p class="text-[11px] text-[#86868b]">Jardín Privado</p>
+                </div>
+                <div class="space-y-1 border-r border-slate-100 last:border-0">
+                    <p class="text-[11px] font-bold text-[#86868b] uppercase tracking-wider">Dormitorios</p>
+                    <p class="text-2xl font-black text-[#1d1d1f]">🛏️ {{ prop.bedrooms }}</p>
+                    <p class="text-[11px] text-[#86868b]">Con armarios/vestidor</p>
+                </div>
+                <div class="space-y-1 border-r border-slate-100 last:border-0">
+                    <p class="text-[11px] font-bold text-[#86868b] uppercase tracking-wider">Baños</p>
+                    <p class="text-2xl font-black text-[#1d1d1f]">🚿 {{ prop.bathrooms }}</p>
+                    <p class="text-[11px] text-[#86868b]">Completos</p>
+                </div>
+                <div class="space-y-1 border-r border-slate-100 last:border-0">
+                    <p class="text-[11px] font-bold text-[#86868b] uppercase tracking-wider">Garaje</p>
+                    <p class="text-2xl font-black text-[#1d1d1f]">🚗 {{ prop.garage_spaces }}</p>
+                    <p class="text-[11px] text-[#86868b]">Plazas cubiertas</p>
+                </div>
+                <div class="space-y-1">
+                    <p class="text-[11px] font-bold text-[#86868b] uppercase tracking-wider">Calificación</p>
+                    <p class="text-2xl font-black text-emerald-600">Letra {{ prop.energy_rating }}</p>
+                    <p class="text-[11px] text-[#86868b]">{{ prop.energy_kwh }}</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- MAIN CONTENT: 2-COLUMN SPLIT (Details vs Sticky Sidebar) -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+            
+            <!-- LEFT COLUMN: Comprehensive Details (Col-8) -->
+            <div class="lg:col-span-7 xl:col-span-8 space-y-12">
+                
+                <!-- Memoria Arquitectónica y Descripción -->
+                <section class="apple-card rounded-[2.5rem] p-8 sm:p-10 space-y-6">
+                    <div class="border-b border-slate-100 pb-4">
+                        <span class="text-xs font-bold text-emerald-600 uppercase tracking-widest">Exclusiva Consulting</span>
+                        <h2 class="text-2xl sm:text-3xl font-black text-[#1d1d1f] tracking-tight mt-1">Descripción de la Propiedad</h2>
+                    </div>
+                    
+                    <div class="text-[#424245] leading-relaxed text-sm sm:text-base space-y-4">
+                        <p>{{ prop.description }}</p>
+                    </div>
+
+                    <!-- Highlight Quote -->
+                    <div class="bg-[#f5f5f7] rounded-2xl p-6 border-l-4 border-emerald-500">
+                        <p class="text-xs sm:text-sm font-semibold text-[#1d1d1f] italic">
+                            &ldquo;El tiempo que empleamos es para ahorrárselo a otros. Cada propiedad seleccionada en Consulting Inmobiliario cuenta con estudio registral y urbanístico completo antes de su comercialización.&rdquo;
+                        </p>
+                    </div>
+                </section>
+
+                <!-- Prestaciones y Calidades (Features Grid) -->
+                <section class="apple-card rounded-[2.5rem] p-8 sm:p-10 space-y-6">
+                    <div class="border-b border-slate-100 pb-4">
+                        <span class="text-xs font-bold text-emerald-600 uppercase tracking-widest">Equipamiento Premium</span>
+                        <h2 class="text-2xl sm:text-3xl font-black text-[#1d1d1f] tracking-tight mt-1">Características y Calidades</h2>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        {% for feat in prop.features_list %}
+                        <div class="flex items-start gap-3 bg-[#fafafa] p-4 rounded-2xl border border-slate-100">
+                            <span class="text-emerald-500 font-bold text-lg mt-0.5">✓</span>
+                            <span class="text-xs sm:text-sm font-medium text-[#1d1d1f]">{{ feat }}</span>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </section>
+
+                <!-- Distribución Arquitectónica por Plantas -->
+                {% if prop.distribution_dict %}
+                <section class="apple-card rounded-[2.5rem] p-8 sm:p-10 space-y-6">
+                    <div class="border-b border-slate-100 pb-4">
+                        <span class="text-xs font-bold text-emerald-600 uppercase tracking-widest">Distribución del Espacio</span>
+                        <h2 class="text-2xl sm:text-3xl font-black text-[#1d1d1f] tracking-tight mt-1">Desglose por Plantas</h2>
+                    </div>
+
+                    <div class="space-y-4">
+                        {% for floor, desc in prop.distribution_dict.items() %}
+                        <div class="bg-[#f5f5f7] rounded-2xl p-6 space-y-2">
+                            <h3 class="font-extrabold text-[#1d1d1f] text-base flex items-center gap-2">
+                                <span class="w-3 h-3 rounded-full bg-emerald-500 inline-block"></span>
+                                {{ floor }}
+                            </h3>
+                            <p class="text-xs sm:text-sm text-[#424245] leading-relaxed">
+                                {{ desc }}
+                            </p>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </section>
+                {% endif %}
+
+                <!-- Entorno y Ubicación en Villaviciosa de Odón -->
+                <section class="apple-card rounded-[2.5rem] p-8 sm:p-10 space-y-6">
+                    <div class="border-b border-slate-100 pb-4">
+                        <span class="text-xs font-bold text-emerald-600 uppercase tracking-widest">Localización Privilegiada</span>
+                        <h2 class="text-2xl sm:text-3xl font-black text-[#1d1d1f] tracking-tight mt-1">Entorno y Servicios Cercanos</h2>
+                    </div>
+
+                    <p class="text-xs sm:text-sm text-[#424245] leading-relaxed">
+                        {{ prop.location_info }}
+                    </p>
+
+                    <!-- Distancias clave -->
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-2">
+                        <div class="bg-[#fafafa] p-4 rounded-2xl text-center border border-slate-100">
+                            <p class="text-lg font-black text-[#1d1d1f]">5 min</p>
+                            <p class="text-[11px] text-[#86868b] font-medium">Eurocolegio Casvi</p>
+                        </div>
+                        <div class="bg-[#fafafa] p-4 rounded-2xl text-center border border-slate-100">
+                            <p class="text-lg font-black text-[#1d1d1f]">6 min</p>
+                            <p class="text-[11px] text-[#86868b] font-medium">Universidad Europea</p>
+                        </div>
+                        <div class="bg-[#fafafa] p-4 rounded-2xl text-center border border-slate-100">
+                            <p class="text-lg font-black text-[#1d1d1f]">3 min</p>
+                            <p class="text-[11px] text-[#86868b] font-medium">Golf El Bosque</p>
+                        </div>
+                        <div class="bg-[#fafafa] p-4 rounded-2xl text-center border border-slate-100">
+                            <p class="text-lg font-black text-[#1d1d1f]">20 min</p>
+                            <p class="text-[11px] text-[#86868b] font-medium">Madrid (Moncloa)</p>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+
+            <!-- RIGHT COLUMN: Sticky Conversion Sidebar (Col-4) -->
+            <div class="lg:col-span-5 xl:col-span-4 lg:sticky lg:top-28 space-y-8">
+                
+                <!-- Visita Privada Form Card -->
+                <div class="apple-card rounded-[2.5rem] p-8 border-2 border-black/5 space-y-6">
+                    <div class="space-y-1">
+                        <span class="bg-emerald-500 text-black font-extrabold text-[10px] px-2.5 py-1 rounded-full uppercase tracking-wider">
+                            Atención Inmediata
+                        </span>
+                        <h3 class="text-2xl font-black text-[#1d1d1f] tracking-tight pt-2">Agendar Visita Privada</h3>
+                        <p class="text-xs text-[#86868b]">
+                            Te asignamos un asesor experto de Consulting Inmobiliario de Villaviciosa.
+                        </p>
+                    </div>
+
+                    <form id="visit-form" onsubmit="submitVisit(event)" class="space-y-4">
+                        <input type="hidden" id="visit-prop-id" value="{{ prop.id }}">
+                        <input type="hidden" id="visit-prop-title" value="{{ prop.title }}">
+                        
+                        <div>
+                            <label class="block text-xs font-bold text-[#1d1d1f] mb-1.5">Nombre Completo *</label>
+                            <input type="text" id="visit-name" required placeholder="Ej. Carlos Martínez" class="w-full bg-[#f5f5f7] border border-slate-200 rounded-xl px-4 py-3 text-xs sm:text-sm font-medium focus:outline-none focus:ring-2 focus:ring-black">
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-[#1d1d1f] mb-1.5">Teléfono de Contacto *</label>
+                            <input type="tel" id="visit-phone" required placeholder="Ej. 612 345 678" class="w-full bg-[#f5f5f7] border border-slate-200 rounded-xl px-4 py-3 text-xs sm:text-sm font-medium focus:outline-none focus:ring-2 focus:ring-black">
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-[#1d1d1f] mb-1.5">Correo Electrónico</label>
+                            <input type="email" id="visit-email" placeholder="carlos@ejemplo.com" class="w-full bg-[#f5f5f7] border border-slate-200 rounded-xl px-4 py-3 text-xs sm:text-sm font-medium focus:outline-none focus:ring-2 focus:ring-black">
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-[#1d1d1f] mb-1.5">Fecha u Horario Preferido</label>
+                            <input type="text" id="visit-date" placeholder="Ej. Mañana por la tarde o Viernes 18:00h" class="w-full bg-[#f5f5f7] border border-slate-200 rounded-xl px-4 py-3 text-xs sm:text-sm font-medium focus:outline-none focus:ring-2 focus:ring-black">
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-[#1d1d1f] mb-1.5">¿Tienes una vivienda que vender antes?</label>
+                            <select id="visit-has-house" class="w-full bg-[#f5f5f7] border border-slate-200 rounded-xl px-4 py-3 text-xs sm:text-sm font-medium focus:outline-none focus:ring-2 focus:ring-black">
+                                <option value="No">No, dispongo de fondos o hipoteca directa</option>
+                                <option value="Sí">Sí, necesito vender mi vivienda actual (solicito tasación)</option>
+                            </select>
+                        </div>
+
+                        <button type="submit" id="visit-submit-btn" class="w-full bg-[#1d1d1f] hover:bg-black text-white font-extrabold text-sm py-4 rounded-xl shadow-lg transition active:scale-95 flex items-center justify-center gap-2">
+                            <span>📅 Confirmar Solicitud de Visita</span> &rarr;
+                        </button>
+                    </form>
+
+                    <div id="visit-status" class="hidden text-xs font-bold p-4 rounded-xl text-center"></div>
+
+                    <!-- Direct WhatsApp Alternative Button -->
+                    <div class="pt-2 border-t border-slate-100">
+                        <a href="https://wa.me/34611031014?text=Hola,%20estoy%20interesado%20en%20visitar%20la%20propiedad%20Ref%20%23{{ prop.id }}%20({{ prop.title|urlencode }})%20en%20{{ prop.zone|urlencode }}." target="_blank" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs py-3.5 px-4 rounded-xl transition flex items-center justify-center gap-2 shadow-sm">
+                            <span>💬 Contactar por WhatsApp Directo</span>
+                        </a>
+                        <p class="text-[11px] text-[#86868b] text-center mt-2">Atendemos consultas y dosieres en menos de 15 minutos.</p>
+                    </div>
+                </div>
+
+                <!-- Calculadora de Hipoteca Estimada Dinámica -->
+                <div class="apple-card rounded-[2.5rem] p-8 space-y-6">
+                    <div class="border-b border-slate-100 pb-3">
+                        <span class="text-xs font-bold text-emerald-600 uppercase tracking-widest">Simulación Financiera</span>
+                        <h4 class="text-xl font-black text-[#1d1d1f] tracking-tight mt-1">Calculadora de Hipoteca</h4>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between text-xs font-bold text-[#1d1d1f] mb-1">
+                                <span>Ahorro Aportado (Entrada)</span>
+                                <span id="calc-downpayment-val" class="text-emerald-600">20%</span>
+                            </div>
+                            <input type="range" id="calc-downpayment-slider" min="10" max="50" value="20" step="5" class="w-full accent-black cursor-pointer" oninput="updateMortgageCalc({{ prop.price }})">
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between text-xs font-bold text-[#1d1d1f] mb-1">
+                                <span>Plazo de Amortización</span>
+                                <span id="calc-years-val" class="text-emerald-600">30 años</span>
+                            </div>
+                            <input type="range" id="calc-years-slider" min="15" max="30" value="30" step="5" class="w-full accent-black cursor-pointer" oninput="updateMortgageCalc({{ prop.price }})">
+                        </div>
+
+                        <!-- Computed Output Card -->
+                        <div class="bg-[#f5f5f7] rounded-2xl p-5 space-y-3">
+                            <div class="flex items-baseline justify-between">
+                                <span class="text-xs font-bold text-[#86868b]">Cuota Estimada:</span>
+                                <span id="calc-monthly-payment" class="text-2xl font-black text-[#1d1d1f]">... €/mes</span>
+                            </div>
+                            <div class="border-t border-slate-200 pt-2 space-y-1 text-[11px] text-[#86868b]">
+                                <div class="flex justify-between">
+                                    <span>Importe Préstamo:</span>
+                                    <span id="calc-loan-amount" class="font-bold text-[#1d1d1f]">... €</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span>ITP Madrid (6%):</span>
+                                    <span id="calc-itp" class="font-bold text-[#1d1d1f]">{{ "{:,.0f}".format(prop.price * 0.06).replace(",", ".") }} €</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span>Tipo Estimado Fijo:</span>
+                                    <span class="font-bold text-[#1d1d1f]">2.80% TIN</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <p class="text-[10px] text-[#86868b] leading-tight text-center">
+                            * Simulación orientativa no vinculante. Consulting Inmobiliario ofrece tramitación de hipoteca gratuita y negociación de las mejores condiciones bancarias.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- SIMILAR PROPERTIES CAROUSEL (3 INMUEBLES RELACIONADOS) -->
+        {% if similar %}
+        <section class="mt-24 pt-16 border-t border-slate-200">
+            <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-4">
+                <div>
+                    <span class="text-xs font-bold text-emerald-600 uppercase tracking-widest">Recomendaciones</span>
+                    <h2 class="text-2xl sm:text-4xl font-black text-[#1d1d1f] tracking-tight mt-1">Inmuebles Similares en Villaviciosa</h2>
+                </div>
+                <a href="/#inmuebles" class="text-xs font-bold text-emerald-600 hover:text-emerald-700">Ver todo el catálogo &rarr;</a>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {% for sim in similar %}
+                <div class="apple-card rounded-[2.5rem] overflow-hidden flex flex-col justify-between">
+                    <div>
+                        <a href="/propiedad/{{ sim.id }}" class="block group">
+                            <div class="h-56 overflow-hidden relative">
+                                <img src="{{ sim.image_url }}" alt="{{ sim.title }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                                <span class="absolute top-4 right-4 bg-white/90 backdrop-blur-md text-[#1d1d1f] text-xs font-bold px-3 py-1 rounded-full shadow">
+                                    {{ sim.zone }}
+                                </span>
+                            </div>
+                        </a>
+
+                        <div class="p-6 space-y-3">
+                            <a href="/propiedad/{{ sim.id }}" class="hover:text-emerald-600 transition">
+                                <h3 class="font-extrabold text-[#1d1d1f] text-lg line-clamp-1">{{ sim.title }}</h3>
+                            </a>
+                            <p class="text-2xl font-black text-[#1d1d1f]">{{ "{:,.0f}".format(sim.price).replace(",", ".") }} €</p>
+                            
+                            <div class="flex items-center justify-between text-xs text-[#86868b] py-2 border-y border-slate-100 font-semibold">
+                                <span>🛏️ {{ sim.bedrooms }} habs</span>
+                                <span>🚿 {{ sim.bathrooms }} baños</span>
+                                <span>📐 {{ sim.area_m2 }} m²</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-6 pt-0">
+                        <a href="/propiedad/{{ sim.id }}" class="w-full bg-[#1d1d1f] hover:bg-black text-white text-xs font-bold py-3.5 rounded-full transition shadow text-center block">
+                            Ver Ficha Completa &rarr;
+                        </a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+        {% endif %}
+
+    </main>
+
+    <!-- LIGHTBOX MODAL FOR FULLSCREEN PHOTOS -->
+    <div id="lightbox" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden flex items-center justify-center p-4">
+        <button onclick="closeLightbox()" class="absolute top-6 right-6 text-white text-3xl font-light hover:text-emerald-400">&times;</button>
+        <button onclick="prevPhoto()" class="absolute left-6 text-white text-3xl font-bold hover:text-emerald-400 p-4">&#10094;</button>
+        <div class="max-w-5xl max-h-[85vh] flex flex-col items-center">
+            <img id="lightbox-img" src="" alt="Fullscreen View" class="max-w-full max-h-[75vh] object-contain rounded-2xl shadow-2xl">
+            <p id="lightbox-caption" class="text-white text-xs font-semibold mt-4 text-center"></p>
+        </div>
+        <button onclick="nextPhoto()" class="absolute right-6 text-white text-3xl font-bold hover:text-emerald-400 p-4">&#10095;</button>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-[#1d1d1f] text-white py-16 border-t border-black/10 mt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div class="space-y-4">
+                    <img src="/static/logo_consulting.png" alt="Consulting Inmobiliario" class="h-10 w-auto bg-white p-1 rounded-lg">
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        Agencia inmobiliaria de referencia en Villaviciosa de Odón. Más de dos décadas conectando hogares y proyectos de vida con transparencia y exclusividad.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-sm mb-4 text-emerald-400">Navegación</h4>
+                    <ul class="space-y-2 text-xs text-slate-400 font-medium">
+                        <li><a href="/" class="hover:text-white transition">Inicio</a></li>
+                        <li><a href="/#inmuebles" class="hover:text-white transition">Comprar Inmueble</a></li>
+                        <li><a href="/vender" class="hover:text-white transition">Vender Inmueble (ACM Gratuito)</a></li>
+                        <li><a href="/alquilar" class="hover:text-white transition">Alquiler Seguro</a></li>
+                        <li><a href="/quienes-somos" class="hover:text-white transition">Quiénes Somos</a></li>
+                        <li><a href="/contacto" class="hover:text-white transition">Contacto</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-sm mb-4 text-emerald-400">Urbanizaciones</h4>
+                    <ul class="space-y-2 text-xs text-slate-400 font-medium">
+                        <li><a href="/#inmuebles" class="hover:text-white transition">Chalets en El Bosque</a></li>
+                        <li><a href="/#inmuebles" class="hover:text-white transition">Chalets en Campodón</a></li>
+                        <li><a href="/#inmuebles" class="hover:text-white transition">Inmuebles en Casco Urbano</a></li>
+                        <li><a href="/#inmuebles" class="hover:text-white transition">Chalets en Castillo y Yedra</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-sm mb-4 text-emerald-400">Oficina Principal</h4>
+                    <p class="text-xs text-slate-400 leading-relaxed mb-3">
+                        Centro Comercial VillaCenter, Local B26<br>
+                        Avda. Príncipe de Asturias 129<br>
+                        28670 Villaviciosa de Odón (Madrid)
+                    </p>
+                    <p class="text-xs font-bold text-white">Tel: 916 165 195 | 611 031 014</p>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+                <p>&copy; 2026 Consulting Inmobiliario de Villaviciosa. Todos los derechos reservados.</p>
+                <div class="flex gap-4">
+                    <a href="/dashboard" class="hover:text-slate-300">Acceso Comercial CRM</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE SCRIPTS -->
+    <script>
+        // Gallery Photos for Lightbox
+        const galleryPhotos = {{ prop.gallery|tojson }};
+        let currentPhotoIdx = 0;
+
+        function openLightbox(idx) {
+            currentPhotoIdx = idx;
+            document.getElementById('lightbox-img').src = galleryPhotos[idx];
+            document.getElementById('lightbox-caption').innerText = `Fotografía ${idx + 1} de ${galleryPhotos.length} - {{ prop.title|e }}`;
+            document.getElementById('lightbox').classList.remove('hidden');
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.add('hidden');
+        }
+
+        function nextPhoto() {
+            currentPhotoIdx = (currentPhotoIdx + 1) % galleryPhotos.length;
+            openLightbox(currentPhotoIdx);
+        }
+
+        function prevPhoto() {
+            currentPhotoIdx = (currentPhotoIdx - 1 + galleryPhotos.length) % galleryPhotos.length;
+            openLightbox(currentPhotoIdx);
+        }
+
+        // Mortgage Calculator in Real-Time
+        function updateMortgageCalc(price) {
+            const downPct = parseInt(document.getElementById('calc-downpayment-slider').value);
+            const years = parseInt(document.getElementById('calc-years-slider').value);
+            
+            document.getElementById('calc-downpayment-val').innerText = downPct + '% (' + Math.round(price * downPct / 100).toLocaleString('es-ES') + ' €)';
+            document.getElementById('calc-years-val').innerText = years + ' años';
+
+            const loan = price * (1 - downPct / 100);
+            document.getElementById('calc-loan-amount').innerText = Math.round(loan).toLocaleString('es-ES') + ' €';
+
+            // Annual fixed interest rate: 2.8%
+            const annualRate = 0.028;
+            const monthlyRate = annualRate / 12;
+            const totalMonths = years * 12;
+
+            // Monthly formula: P * (r * (1 + r)^n) / ((1 + r)^n - 1)
+            const monthlyPayment = loan * (monthlyRate * Math.pow(1 + monthlyRate, totalMonths)) / (Math.pow(1 + monthlyRate, totalMonths) - 1);
+            document.getElementById('calc-monthly-payment').innerText = Math.round(monthlyPayment).toLocaleString('es-ES') + ' €/mes';
+        }
+
+        // Run Mortgage Calc on load
+        document.addEventListener('DOMContentLoaded', () => {
+            updateMortgageCalc({{ prop.price }});
+        });
+
+        // Submit Visit Request
+        async function submitVisit(e) {
+            e.preventDefault();
+            const btn = document.getElementById('visit-submit-btn');
+            const statusDiv = document.getElementById('visit-status');
+            
+            btn.disabled = true;
+            btn.innerHTML = 'Enviando solicitud...';
+
+            const payload = {
+                property_id: parseInt(document.getElementById('visit-prop-id').value),
+                property_title: document.getElementById('visit-prop-title').value,
+                name: document.getElementById('visit-name').value,
+                phone: document.getElementById('visit-phone').value,
+                email: document.getElementById('visit-email').value || null,
+                preferred_date: document.getElementById('visit-date').value || null,
+                has_house_to_sell: document.getElementById('visit-has-house').value
+            };
+
+            try {
+                const res = await fetch('/api/schedule-visit', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify(payload)
+                });
+                const data = await res.json();
+                
+                statusDiv.className = 'text-xs font-bold p-4 rounded-xl text-center bg-emerald-100 text-emerald-800';
+                statusDiv.innerText = '✓ ' + data.message;
+                statusDiv.classList.remove('hidden');
+                document.getElementById('visit-form').reset();
+            } catch (err) {
+                statusDiv.className = 'text-xs font-bold p-4 rounded-xl text-center bg-red-100 text-red-800';
+                statusDiv.innerText = 'Hubo un error al procesar tu solicitud. Por favor llámanos al 916 165 195.';
+                statusDiv.classList.remove('hidden');
+            } finally {
+                btn.disabled = false;
+                btn.innerHTML = '<span>📅 Confirmar Solicitud de Visita</span> &rarr;';
+            }
+        }
+    </script>
+</body>
+</html>

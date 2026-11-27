@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulting Inmobiliario de Villaviciosa de Odón | Arquitectura y Chalets Exclusivos</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: #ffffff;
+            color: #1d1d1f;
+        }
+        .apple-nav {
+            background: rgba(255, 255, 255, 0.82);
+            backdrop-filter: saturate(180%) blur(20px);
+            -webkit-backdrop-filter: saturate(180%) blur(20px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+        }
+        .apple-card {
+            background: #ffffff;
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.04);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .apple-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.08);
+            border-color: rgba(16, 185, 129, 0.3);
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        /* Custom Apple-style slider */
+        input[type=range] {
+            -webkit-appearance: none;
+            background: #e5e5ea;
+            border-radius: 9999px;
+            height: 6px;
+        }
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 26px;
+            height: 26px;
+            background: #ffffff;
+            border: 2px solid #10b981;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
+        }
+        input[type=range]::-webkit-slider-thumb:hover {
+            transform: scale(1.15);
+            box-shadow: 0 6px 18px rgba(16, 185, 129, 0.3);
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col selection:bg-emerald-500 selection:text-white">
+
+    <!-- Top Dynamic Pill Notice -->
+    <div class="bg-[#f5f5f7] border-b border-black/5 py-2 px-4 text-center text-xs text-[#86868b] flex flex-col sm:flex-row justify-between items-center max-w-7xl mx-auto w-full gap-2">
+        <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+            <span class="font-semibold text-[#1d1d1f]">Sede Central Villaviciosa de Odón</span>
+            <span class="text-slate-300">•</span>
+            <span>Centro Comercial VillaCenter, Local B26 (Avda. Príncipe de Asturias 129)</span>
+        </div>
+        <div class="flex items-center gap-4">
+            <span class="font-medium">Tel. <strong>916 165 195</strong></span>
+            <a href="/dashboard" class="bg-black hover:bg-slate-800 text-white font-bold text-[11px] px-3 py-1 rounded-full transition shadow-sm">
+                Acceso CRM Leads &rarr;
+            </a>
+        </div>
+    </div>
+
+    <!-- Apple Sticky Glass Header -->
+    <header class="apple-nav sticky top-0 z-40 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo & Name -->
+            <a href="/" class="flex items-center gap-3.5 group">
+                <div class="h-10 w-10 rounded-xl bg-slate-50 border border-slate-200/80 p-1 flex items-center justify-center shadow-sm">
+                    <img src="/static/logo_consulting.png" alt="Consulting Villaviciosa" class="h-full w-full object-contain">
+                </div>
+                <div>
+                    <span class="text-lg font-black tracking-tight text-[#1d1d1f] flex items-center gap-1">
+                        Consulting <span class="text-emerald-600 font-extrabold">Villaviciosa</span>
+                    </span>
+                    <p class="text-[9px] uppercase tracking-widest text-[#86868b] font-bold">Inmobiliaria de Autor • Desde 1998</p>
+                </div>
+            </a>
+
+            <!-- Navigation Links -->
+            <nav class="hidden md:flex items-center gap-7 text-xs font-bold text-[#86868b] uppercase tracking-wider">
+                <a href="#inmuebles" class="hover:text-[#1d1d1f] transition">Catálogo</a>
+                <a href="/vender" class="hover:text-[#1d1d1f] transition">Vender</a>
+                <a href="/alquilar" class="hover:text-[#1d1d1f] transition">Alquilar</a>
+                <a href="/quienes-somos" class="hover:text-[#1d1d1f] transition">Quiénes Somos</a>
+                <a href="/contacto" class="hover:text-[#1d1d1f] transition">Contacto</a>
+                <a href="#tasador" class="hover:text-emerald-600 transition">Tasador Online</a>
+            </nav>
+
+            <!-- Action Buttons -->
+            <div class="flex items-center gap-3">
+                <a href="#tasador" class="hidden sm:inline-flex items-center gap-2 text-xs font-bold text-[#1d1d1f] hover:text-black px-4 py-2.5 rounded-full transition border border-slate-300 hover:border-black bg-white">
+                    Valorar mi Chalet
+                </a>
+                <button onclick="toggleChat()" class="inline-flex items-center gap-2 bg-[#1d1d1f] hover:bg-black text-white text-xs font-bold px-4 py-2.5 rounded-full shadow-md transition active:scale-95">
+                    <svg class="w-3.5 h-3.5 text-emerald-400" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+                    <span>Asistente 24/7</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section (Spacious, Airy, Full-Bleed Architectural Luxury) -->
+    <section class="pt-16 pb-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
+        <!-- Main Statement -->
+        <div class="max-w-4xl mx-auto text-center space-y-6">
+            <span class="inline-flex items-center gap-2 bg-[#f5f5f7] border border-black/5 px-4 py-1.5 rounded-full text-xs font-bold text-[#86868b]">
+                <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                Arquitectura Singular & Chalets de Autor en Madrid Oeste
+            </span>
+
+            <h1 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-[#1d1d1f] tracking-tight leading-[1.04]">
+                El lujo del espacio.<br>
+                <span class="text-slate-400 font-light">En Villaviciosa de Odón.</span>
+            </h1>
+
+            <p class="text-lg md:text-xl text-[#86868b] max-w-2xl mx-auto leading-relaxed font-normal">
+                <em>"El tiempo que empleamos es para ahorrárselo a otros."</em> Asesoramiento integral en compraventa de chalets en <strong>Urb. El Bosque</strong> y <strong>Campodón</strong> con respuesta inmediata en 15 segundos.
+            </p>
+
+            <div class="pt-4 flex flex-wrap justify-center items-center gap-4">
+                <a href="#inmuebles" class="bg-[#1d1d1f] hover:bg-black text-white font-extrabold text-sm px-8 py-4 rounded-full shadow-lg transition active:scale-95 flex items-center gap-2">
+                    <span>Explorar Inmuebles</span> &rarr;
+                </a>
+                <a href="#tasador" class="bg-[#f5f5f7] hover:bg-slate-200 text-[#1d1d1f] font-bold text-sm px-8 py-4 rounded-full transition">
+                    Tasador Oficial en Vivo
+                </a>
+            </div>
+        </div>
+
+        <!-- Grand Cinematic Hero Photo Frame (Airy & Monumental) -->
+        <div class="mt-16 rounded-[2.5rem] sm:rounded-[3rem] overflow-hidden shadow-2xl border border-black/5 relative aspect-[16/9] max-h-[640px] group">
+            <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1800&q=85" alt="Villa El Bosque" class="w-full h-full object-cover group-hover:scale-105 transition duration-1000 ease-out">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent flex flex-col justify-end p-8 sm:p-14 text-white">
+                <div class="flex flex-wrap items-end justify-between gap-6">
+                    <div class="space-y-2">
+                        <span class="bg-emerald-500 text-black font-extrabold text-[11px] uppercase tracking-wider px-3 py-1 rounded-full">Exclusiva en El Bosque</span>
+                        <h2 class="text-2xl sm:text-4xl font-extrabold tracking-tight">Chalet Independiente de Autor</h2>
+                        <p class="text-slate-200 text-xs sm:text-sm max-w-lg">
+                            1.800 m² de parcela ajardinada, piscina privada climatizada y arquitectura bioclimática de vanguardia.
+                        </p>
+                    </div>
+                    <div class="flex flex-col sm:flex-row items-baseline sm:items-center gap-4">
+                        <span class="text-3xl sm:text-4xl font-black">1.180.000 €</span>
+                        <a href="/propiedad/1" class="bg-white hover:bg-slate-100 text-black font-extrabold text-xs sm:text-sm px-6 py-3.5 rounded-full shadow-xl transition active:scale-95 inline-flex items-center gap-2">
+                            <span>Ver Ficha Completa & Visita</span> &rarr;
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALERÍA FOTOGRÁFICA EDITORIAL (Mucho más contenido visual) -->
+    <section id="galeria" class="py-24 bg-[#f5f5f7] border-y border-black/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-4">
+                <div>
+                    <p class="text-xs font-bold uppercase tracking-widest text-emerald-600">Galería Arquitectónica</p>
+                    <h2 class="text-3xl sm:text-5xl font-black text-[#1d1d1f] tracking-tight mt-1">Detalles que marcan la diferencia</h2>
+                </div>
+                <p class="text-sm text-[#86868b] max-w-md">
+                    Seleccionamos únicamente inmuebles con calidades de primer nivel, luz natural envolvente y espacios pensados para el descanso y la privacidad.
+                </p>
+            </div>
+
+            <!-- Asymmetric Photo Grid with 3D Tilt on Hover -->
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+                <!-- Large 8-col Photo: Grand Living Room -->
+                <div class="md:col-span-8 rounded-[2.5rem] overflow-hidden shadow-sm hover:shadow-xl transition duration-500 relative h-96 sm:h-[460px] group">
+                    <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=80" alt="Salón abierto al jardín" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex flex-col justify-end p-8 text-white">
+                        <span class="text-xs font-bold text-emerald-400 uppercase tracking-widest">Interiores</span>
+                        <h3 class="text-xl sm:text-2xl font-bold mt-1">Salones diáfanos con salida directa al porche</h3>
+                        <p class="text-xs text-slate-300 mt-1">Ventanales de suelo a techo con rotura de puente térmico y orientación sur.</p>
+                    </div>
+                </div>
+
+                <!-- 4-col Photo: Infinity Pool -->
+                <div class="md:col-span-4 rounded-[2.5rem] overflow-hidden shadow-sm hover:shadow-xl transition duration-500 relative h-96 sm:h-[460px] group">
+                    <img src="https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&w=800&q=80" alt="Piscina infinity" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex flex-col justify-end p-8 text-white">
+                        <span class="text-xs font-bold text-emerald-400 uppercase tracking-widest">Exteriores</span>
+                        <h3 class="text-xl font-bold mt-1">Zonas de agua y relax</h3>
+                        <p class="text-xs text-slate-300 mt-1">Piscinas de cloración salina y cascada integrada.</p>
+                    </div>
+                </div>
+
+                <!-- 4-col Photo: Master Suite -->
+                <div class="md:col-span-4 rounded-[2.5rem] overflow-hidden shadow-sm hover:shadow-xl transition duration-500 relative h-80 group">
+                    <img src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=800&q=80" alt="Dormitorio principal" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex flex-col justify-end p-6 text-white">
+                        <h3 class="text-lg font-bold">Suites con vestidor integrado</h3>
+                    </div>
+                </div>
+
+                <!-- 4-col Photo: Designer Kitchen -->
+                <div class="md:col-span-4 rounded-[2.5rem] overflow-hidden shadow-sm hover:shadow-xl transition duration-500 relative h-80 group">
+                    <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=800&q=80" alt="Cocina de autor" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex flex-col justify-end p-6 text-white">
+                        <h3 class="text-lg font-bold">Cocinas de isla con electrodomésticos premium</h3>
+                    </div>
+                </div>
+
+                <!-- 4-col Photo: Golf & Nature -->
+                <div class="md:col-span-4 rounded-[2.5rem] overflow-hidden shadow-sm hover:shadow-xl transition duration-500 relative h-80 group">
+                    <img src="https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&w=800&q=80" alt="Golf El Bosque" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex flex-col justify-end p-6 text-white">
+                        <h3 class="text-lg font-bold">Junto al campo de golf de El Bosque</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HORIZONTAL SCROLL SHOWCASE (Scroll-Driven Interactive Carousel) -->
+    <section id="inmuebles" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+            <div>
+                <p class="text-xs font-bold uppercase tracking-widest text-emerald-600">Catálogo Dinámico</p>
+                <h2 class="text-3xl sm:text-5xl font-black text-[#1d1d1f] tracking-tight mt-1">Chalets y Propiedades en Venta</h2>
+            </div>
+            
+            <!-- Prominent Horizontal Carousel Arrows -->
+            <div class="flex items-center gap-3">
+                <button onclick="scrollCarousel(-1)" aria-label="Anterior" class="w-14 h-14 rounded-full border-2 border-slate-200 hover:border-black bg-white hover:bg-[#1d1d1f] hover:text-white flex items-center justify-center text-xl font-bold transition-all duration-300 shadow-md hover:shadow-xl hover:scale-105 active:scale-95 group">
+                    <svg class="w-6 h-6 transform group-hover:-translate-x-0.5 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"/></svg>
+                </button>
+                <button onclick="scrollCarousel(1)" aria-label="Siguiente" class="w-14 h-14 rounded-full border-2 border-slate-200 hover:border-black bg-white hover:bg-[#1d1d1f] hover:text-white flex items-center justify-center text-xl font-bold transition-all duration-300 shadow-md hover:shadow-xl hover:scale-105 active:scale-95 group">
+                    <svg class="w-6 h-6 transform group-hover:translate-x-0.5 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Filter Segmented Bar -->
+        <div class="flex flex-wrap items-center gap-2 mb-8">
+            <button onclick="filterPropertyType('all')" id="btn-filter-all" class="prop-filter-btn bg-[#1d1d1f] text-white font-bold text-xs px-5 py-2.5 rounded-full transition shadow">
+                Todos ({{ properties|length }})
+            </button>
+            <button onclick="filterPropertyType('Chalet Independiente')" id="btn-filter-indep" class="prop-filter-btn bg-[#f5f5f7] hover:bg-slate-200 text-[#1d1d1f] font-semibold text-xs px-5 py-2.5 rounded-full transition">
+                🏡 Chalets Independientes
+            </button>
+            <button onclick="filterPropertyType('Chalet Pareado')" id="btn-filter-pareado" class="prop-filter-btn bg-[#f5f5f7] hover:bg-slate-200 text-[#1d1d1f] font-semibold text-xs px-5 py-2.5 rounded-full transition">
+                🏘️ Pareados y Adosados
+            </button>
+            <button onclick="filterPropertyType('Ático')" id="btn-filter-atico" class="prop-filter-btn bg-[#f5f5f7] hover:bg-slate-200 text-[#1d1d1f] font-semibold text-xs px-5 py-2.5 rounded-full transition">
+                🏙️ Áticos y Pisos
+            </button>
+        </div>
+
+        <!-- Horizontal Snap Carousel Container (Exact 3 Cards on Desktop) -->
+        <div id="carousel-container" class="flex gap-6 overflow-x-auto snap-x snap-mandatory no-scrollbar pb-6 pt-2 scroll-smooth">
+            {% for prop in properties %}
+            <div class="property-card apple-card rounded-[2.5rem] overflow-hidden w-full sm:w-[calc((100%-1.5rem)/2)] lg:w-[calc((100%-3rem)/3)] flex-shrink-0 snap-start flex flex-col justify-between" data-type="{{ prop.property_type }}" data-zone="{{ prop.zone }}">
+                <div>
+                    <a href="/propiedad/{{ prop.id }}" class="block group/img">
+                        <div class="h-64 overflow-hidden relative">
+                            <img src="{{ prop.image_url }}" alt="{{ prop.title }}" class="w-full h-full object-cover group-hover/img:scale-105 transition duration-700">
+                            <span class="absolute top-4 right-4 bg-white/90 backdrop-blur-md text-[#1d1d1f] text-xs font-bold px-3.5 py-1 rounded-full shadow">
+                                {{ prop.zone }}
+                            </span>
+                            <span class="absolute bottom-4 left-4 bg-black/75 backdrop-blur-md text-white text-[11px] font-bold px-3 py-1 rounded-full">
+                                {{ prop.property_type }}
+                            </span>
+                        </div>
+                    </a>
+
+                    <div class="p-6 sm:p-8 space-y-4">
+                        <a href="/propiedad/{{ prop.id }}" class="hover:text-emerald-600 transition block">
+                            <h3 class="font-extrabold text-[#1d1d1f] text-xl line-clamp-1 leading-snug">{{ prop.title }}</h3>
+                        </a>
+                        <p class="text-3xl font-black text-[#1d1d1f] tracking-tight">{{ "{:,.0f}".format(prop.price).replace(",", ".") }} €</p>
+                        
+                        <div class="flex items-center justify-between text-xs text-[#86868b] py-3 border-y border-slate-100 font-semibold">
+                            <span>🛏️ {{ prop.bedrooms }} dormitorios</span>
+                            <span>🚿 {{ prop.bathrooms }} baños</span>
+                            <span>📐 {{ prop.area_m2 }} m²</span>
+                        </div>
+
+                        <p class="text-xs text-[#86868b] line-clamp-2 leading-relaxed">{{ prop.description }}</p>
+                    </div>
+                </div>
+
+                <div class="p-6 sm:p-8 pt-0 flex gap-2">
+                    <a href="/propiedad/{{ prop.id }}" class="flex-1 bg-white hover:bg-slate-100 text-[#1d1d1f] border border-slate-200 hover:border-black text-xs font-bold py-3.5 rounded-full transition shadow-sm text-center flex items-center justify-center gap-1.5">
+                        <span>Ver Ficha Completa</span> &rarr;
+                    </a>
+                    <button onclick="openPropertyChat('{{ prop.title }} ({{ prop.zone }})')" class="bg-[#1d1d1f] hover:bg-black text-white text-xs font-bold py-3.5 px-4 rounded-full transition shadow flex items-center justify-center" title="Chat Rápido">
+                        <span>💬 Visita</span>
+                    </button>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <!-- Redundant Controls Pod & Progress Bar -->
+        <div class="mt-8 pt-4 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-6 max-w-4xl mx-auto">
+            <!-- Redundant Previous Button -->
+            <button onclick="scrollCarousel(-1)" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white hover:bg-[#1d1d1f] hover:text-white text-[#1d1d1f] border-2 border-slate-200 hover:border-[#1d1d1f] font-extrabold text-xs px-6 py-3 rounded-full shadow-sm hover:shadow-md transition active:scale-95">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"/></svg>
+                <span>Anterior</span>
+            </button>
+
+            <!-- Center Progress Track & Slide Indicator -->
+            <div class="w-full sm:max-w-xs space-y-2 text-center">
+                <div class="w-full bg-slate-200 h-1.5 rounded-full overflow-hidden">
+                    <div id="carousel-progress" class="bg-gradient-to-r from-emerald-500 to-[#1d1d1f] h-full w-1/4 rounded-full transition-all duration-300"></div>
+                </div>
+                <p id="carousel-counter" class="text-xs font-bold text-[#86868b] uppercase tracking-wider">
+                    Inmuebles 1–3 de {{ properties|length }}
+                </p>
+            </div>
+
+            <!-- Redundant Next Button -->
+            <button onclick="scrollCarousel(1)" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white hover:bg-[#1d1d1f] hover:text-white text-[#1d1d1f] border-2 border-slate-200 hover:border-[#1d1d1f] font-extrabold text-xs px-6 py-3 rounded-full shadow-sm hover:shadow-md transition active:scale-95">
+                <span>Siguiente</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
+            </button>
+        </div>
+    </section>
+
+    <!-- STICKY SPLIT-SCROLL SECTION ("El Enfoque Consulting") -->
+    <section id="enfoque" class="py-28 bg-[#f5f5f7] border-y border-black/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+                
+                <!-- Left Column (STICKY) -->
+                <div class="lg:col-span-5 lg:sticky lg:top-32 space-y-6">
+                    <span class="bg-emerald-100 text-emerald-800 text-xs font-bold uppercase tracking-wider px-3.5 py-1 rounded-full">
+                        Metodología de Trabajo
+                    </span>
+                    <h2 class="text-4xl sm:text-5xl font-black text-[#1d1d1f] tracking-tight leading-tight">
+                        Por qué los propietarios confían en nosotros.
+                    </h2>
+                    <blockquote class="text-base text-[#86868b] italic border-l-2 border-emerald-500 pl-4 py-1 leading-relaxed">
+                        "El tiempo que empleamos es para ahorrárselo a otros. Estamos interactuando constantemente y por el camino nos llevamos experiencias para recordar, gracias a que nos apasiona nuestro trabajo."
+                    </blockquote>
+                    <p class="text-sm text-[#86868b] leading-relaxed">
+                        Desde nuestra oficina en el <strong>Centro Comercial VillaCenter</strong>, combinamos más de 25 años de conocimiento calle por calle en Villaviciosa con automatización de respuesta instantánea para que ningún comprador solvente se quede sin atender.
+                    </p>
+
+                    <!-- Interactive Animated Metrics Counters -->
+                    <div class="grid grid-cols-3 gap-4 pt-6 border-t border-slate-200" id="metrics-counters">
+                        <div>
+                            <p class="text-3xl sm:text-4xl font-black text-[#1d1d1f]" data-target="45">+0M €</p>
+                            <p class="text-[11px] text-[#86868b] font-medium mt-1">Cartera Gestionada</p>
+                        </div>
+                        <div>
+                            <p class="text-3xl sm:text-4xl font-black text-emerald-600" data-target="15">&lt; 0s</p>
+                            <p class="text-[11px] text-[#86868b] font-medium mt-1">Respuesta Comercial</p>
+                        </div>
+                        <div>
+                            <p class="text-3xl sm:text-4xl font-black text-[#1d1d1f]" data-target="98">0%</p>
+                            <p class="text-[11px] text-[#86868b] font-medium mt-1">Cierre en Notaría</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column (SCROLLABLE PHOTO ESSAY) -->
+                <div class="lg:col-span-7 space-y-10">
+                    <div class="apple-card rounded-[2.5rem] overflow-hidden p-4">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=80" alt="Chalet Campodón" class="w-full h-80 sm:h-96 object-cover rounded-[2rem]">
+                        <div class="p-6 space-y-2">
+                            <span class="text-xs font-bold text-emerald-600 uppercase">Urb. Campodón</span>
+                            <h3 class="text-xl font-bold text-[#1d1d1f]">Filtro de Solvencia Previa</h3>
+                            <p class="text-xs text-[#86868b] leading-relaxed">
+                                Antes de abrir la puerta de su chalet a una visita, nuestro sistema automatizado verifica la capacidad de compra y financiación del interesado, protegiendo su tiempo y su privacidad.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="apple-card rounded-[2.5rem] overflow-hidden p-4">
+                        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1000&q=80" alt="Ático Terraza" class="w-full h-80 sm:h-96 object-cover rounded-[2rem]">
+                        <div class="p-6 space-y-2">
+                            <span class="text-xs font-bold text-emerald-600 uppercase">Casco Urbano & UEM</span>
+                            <h3 class="text-xl font-bold text-[#1d1d1f]">Reportaje Fotográfico de Autor y Dron</h3>
+                            <p class="text-xs text-[#86868b] leading-relaxed">
+                                Producción visual profesional que multiplica por tres el interés en los principales portales y redes privadas de inversores.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="apple-card rounded-[2.5rem] overflow-hidden p-4">
+                        <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1000&q=80" alt="Villa Castillo" class="w-full h-80 sm:h-96 object-cover rounded-[2rem]">
+                        <div class="p-6 space-y-2">
+                            <span class="text-xs font-bold text-emerald-600 uppercase">Entorno Castillo</span>
+                            <h3 class="text-xl font-bold text-[#1d1d1f]">Tasación Basada en Datos Reales de Notaría</h3>
+                            <p class="text-xs text-[#86868b] leading-relaxed">
+                                No tasamos a ojo. Fijamos el precio óptimo cruzando valores de escrituras recientes en Villaviciosa para vender en menos de 90 días sin devaluar el inmueble.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ZONAS RESIDENCIALES DE VILLAVICIOSA (Clean Apple Grid) -->
+    <section id="zonas" class="py-28 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+            <p class="text-xs font-bold uppercase tracking-widest text-emerald-600">Enclaves Singulares</p>
+            <h2 class="text-3xl sm:text-5xl font-black text-[#1d1d1f] tracking-tight">Dónde vivir en Villaviciosa</h2>
+            <p class="text-base text-[#86868b]">
+                Cuatro entornos con personalidad propia, desde parcelas privadas en el bosque hasta la vida de pueblo tradicional.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Zone 1 -->
+            <div class="apple-card rounded-[2.5rem] p-8 flex flex-col justify-between">
+                <div class="space-y-4">
+                    <div class="flex items-center justify-between">
+                        <span class="text-3xl">🌲</span>
+                        <span class="bg-emerald-50 text-emerald-700 font-bold text-xs px-3 py-1 rounded-full">Top Exclusivo</span>
+                    </div>
+                    <h3 class="text-2xl font-extrabold text-[#1d1d1f]">Urb. El Bosque</h3>
+                    <p class="text-xs font-bold text-emerald-600">~2.650 €/m²</p>
+                    <p class="text-xs text-[#86868b] leading-relaxed">
+                        Parcelas mínimas de 1.500 m², chalets independientes, club de golf, universidad y entorno forestal protegido.
+                    </p>
+                </div>
+                <button onclick="filterByZone('El Bosque')" class="mt-8 w-full bg-[#f5f5f7] hover:bg-slate-200 text-[#1d1d1f] text-xs font-bold py-3.5 rounded-full transition">
+                    Ver Inmuebles &rarr;
+                </button>
+            </div>
+
+            <!-- Zone 2 -->
+            <div class="apple-card rounded-[2.5rem] p-8 flex flex-col justify-between">
+                <div class="space-y-4">
+                    <div class="flex items-center justify-between">
+                        <span class="text-3xl">🏡</span>
+                        <span class="bg-blue-50 text-blue-700 font-bold text-xs px-3 py-1 rounded-full">Residencial</span>
+                    </div>
+                    <h3 class="text-2xl font-extrabold text-[#1d1d1f]">Urb. Campodón</h3>
+                    <p class="text-xs font-bold text-blue-600">~2.300 €/m²</p>
+                    <p class="text-xs text-[#86868b] leading-relaxed">
+                        Chalets pareados e individuales, tranquilidad familiar, colegios internacionales y salida rápida a M-50 y M-501.
+                    </p>
+                </div>
+                <button onclick="filterByZone('Campodón')" class="mt-8 w-full bg-[#f5f5f7] hover:bg-slate-200 text-[#1d1d1f] text-xs font-bold py-3.5 rounded-full transition">
+                    Ver Inmuebles &rarr;
+                </button>
+            </div>
+
+            <!-- Zone 3 -->
+            <div class="apple-card rounded-[2.5rem] p-8 flex flex-col justify-between">
+                <div class="space-y-4">
+                    <div class="flex items-center justify-between">
+                        <span class="text-3xl">🏛️</span>
+                        <span class="bg-purple-50 text-purple-700 font-bold text-xs px-3 py-1 rounded-full">Centro</span>
+                    </div>
+                    <h3 class="text-2xl font-extrabold text-[#1d1d1f]">Casco Urbano</h3>
+                    <p class="text-xs font-bold text-purple-600">~2.350 €/m²</p>
+                    <p class="text-xs text-[#86868b] leading-relaxed">
+                        Vida a pie de calle con plazas históricas, comercios, autobuses a Moncloa/Príncipe Pío y alta demanda en alquiler.
+                    </p>
+                </div>
+                <button onclick="filterByZone('Casco Urbano')" class="mt-8 w-full bg-[#f5f5f7] hover:bg-slate-200 text-[#1d1d1f] text-xs font-bold py-3.5 rounded-full transition">
+                    Ver Inmuebles &rarr;
+                </button>
+            </div>
+
+            <!-- Zone 4 -->
+            <div class="apple-card rounded-[2.5rem] p-8 flex flex-col justify-between">
+                <div class="space-y-4">
+                    <div class="flex items-center justify-between">
+                        <span class="text-3xl">🏰</span>
+                        <span class="bg-amber-50 text-amber-700 font-bold text-xs px-3 py-1 rounded-full">Histórico</span>
+                    </div>
+                    <h3 class="text-2xl font-extrabold text-[#1d1d1f]">Castillo / Cerro</h3>
+                    <p class="text-xs font-bold text-amber-600">~2.400 €/m²</p>
+                    <p class="text-xs text-[#86868b] leading-relaxed">
+                        Vistas despejadas a la sierra de Guadarrama junto a la fortaleza histórica. Entorno tranquilo y viviendas de diseño.
+                    </p>
+                </div>
+                <button onclick="filterByZone('Castillo')" class="mt-8 w-full bg-[#f5f5f7] hover:bg-slate-200 text-[#1d1d1f] text-xs font-bold py-3.5 rounded-full transition">
+                    Ver Inmuebles &rarr;
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- TASADOR ONLINE INTERACTIVO (Apple Studio Light Configurator) -->
+    <section id="tasador" class="py-28 bg-[#f5f5f7] border-t border-black/5">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white rounded-[3rem] p-8 sm:p-16 shadow-xl border border-black/5">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    
+                    <div class="lg:col-span-5 space-y-6">
+                        <span class="bg-emerald-50 text-emerald-800 text-xs font-bold uppercase tracking-wider px-3.5 py-1 rounded-full">
+                            Tasador en Vivo
+                        </span>
+                        <h2 class="text-3xl sm:text-5xl font-black text-[#1d1d1f] tracking-tight leading-tight">
+                            ¿Cuánto vale tu propiedad hoy?
+                        </h2>
+                        <p class="text-sm text-[#86868b] leading-relaxed">
+                            Algoritmo calibrado con las últimas compraventas notariales registradas en Villaviciosa de Odón.
+                        </p>
+
+                        <!-- Big Live Estimation Display Box -->
+                        <div class="bg-[#f5f5f7] rounded-3xl p-6 sm:p-8 space-y-2 border border-black/5">
+                            <p class="text-[10px] font-bold text-[#86868b] uppercase tracking-widest">Valor Estimado de Mercado</p>
+                            <p id="live-valuation-text" class="text-3xl sm:text-4xl md:text-5xl font-black text-[#1d1d1f] tracking-tight">
+                                658.000 € – 742.000 €
+                            </p>
+                            <p class="text-xs text-[#86868b] pt-1">
+                                Media calculada: <strong id="live-rate-text" class="text-[#1d1d1f]">~2.500 €/m²</strong>
+                            </p>
+                        </div>
+
+                        <p class="text-xs text-[#86868b] flex items-center gap-2">
+                            <span>🛡️</span> 100% Gratuito y confidencial. Sin compromiso de exclusividad.
+                        </p>
+                    </div>
+
+                    <!-- Configurator Form -->
+                    <div class="lg:col-span-7 bg-[#f5f5f7] rounded-3xl p-6 sm:p-10 border border-black/5">
+                        <form id="valuation-form" onsubmit="submitValuation(event)" class="space-y-6">
+                            
+                            <!-- Zone Selector -->
+                            <div>
+                                <label class="block text-[11px] font-bold uppercase tracking-wider text-[#86868b] mb-2">1. Selecciona la Zona</label>
+                                <div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                                    <button type="button" onclick="selectConfigZone('El Bosque', this)" class="zone-pill py-3 px-3 rounded-2xl text-xs font-bold bg-white text-[#1d1d1f] border border-black/5 hover:border-black transition shadow-sm">El Bosque</button>
+                                    <button type="button" onclick="selectConfigZone('Campodón', this)" class="zone-pill active py-3 px-3 rounded-2xl text-xs font-bold bg-[#1d1d1f] text-white border border-[#1d1d1f] shadow transition">Campodón</button>
+                                    <button type="button" onclick="selectConfigZone('Casco Urbano', this)" class="zone-pill py-3 px-3 rounded-2xl text-xs font-bold bg-white text-[#1d1d1f] border border-black/5 hover:border-black transition shadow-sm">Centro</button>
+                                    <button type="button" onclick="selectConfigZone('Castillo', this)" class="zone-pill py-3 px-3 rounded-2xl text-xs font-bold bg-white text-[#1d1d1f] border border-black/5 hover:border-black transition shadow-sm">Castillo</button>
+                                </div>
+                                <input type="hidden" id="val-zone" value="Campodón">
+                            </div>
+
+                            <!-- Typology Selector -->
+                            <div>
+                                <label class="block text-[11px] font-bold uppercase tracking-wider text-[#86868b] mb-2">2. Tipología de Inmueble</label>
+                                <div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
+                                    <button type="button" onclick="selectConfigType('Chalet Independiente', this)" class="type-pill py-3 px-3 rounded-2xl text-xs font-bold bg-white text-[#1d1d1f] border border-black/5 hover:border-black transition shadow-sm">Independiente</button>
+                                    <button type="button" onclick="selectConfigType('Chalet Pareado', this)" class="type-pill active py-3 px-3 rounded-2xl text-xs font-bold bg-[#1d1d1f] text-white border border-[#1d1d1f] shadow transition">Pareado / Adosado</button>
+                                    <button type="button" onclick="selectConfigType('Ático', this)" class="type-pill py-3 px-3 rounded-2xl text-xs font-bold bg-white text-[#1d1d1f] border border-black/5 hover:border-black transition shadow-sm">Ático / Piso</button>
+                                </div>
+                                <input type="hidden" id="val-type" value="Chalet Pareado">
+                            </div>
+
+                            <!-- Area Slider -->
+                            <div class="space-y-2">
+                                <div class="flex justify-between items-center">
+                                    <label class="text-[11px] font-bold uppercase tracking-wider text-[#86868b]">3. Superficie Construida</label>
+                                    <span id="area-val-badge" class="text-sm font-black text-[#1d1d1f] bg-white border border-black/5 px-3 py-1 rounded-xl shadow-sm">290 m²</span>
+                                </div>
+                                <input type="range" id="val-area" min="60" max="750" value="290" oninput="updateAreaSlider(this.value)" class="w-full">
+                            </div>
+
+                            <!-- Condition -->
+                            <div>
+                                <label class="block text-[11px] font-bold uppercase tracking-wider text-[#86868b] mb-2">4. Estado de Conservación</label>
+                                <select id="val-condition" onchange="recalculateLiveValuation()" class="w-full bg-white border border-slate-200 rounded-2xl px-4 py-3 text-xs font-bold text-[#1d1d1f] focus:outline-none focus:border-black shadow-sm">
+                                    <option value="Excelente / Lujo">Excelente / Calidades de Lujo (+18%)</option>
+                                    <option value="Buen estado" selected>Buen estado para entrar a vivir (Estándar)</option>
+                                    <option value="A reformar">Necesita reforma / actualización (-18%)</option>
+                                </select>
+                            </div>
+
+                            <hr class="border-slate-200">
+
+                            <!-- Contact Inputs -->
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                <input type="text" id="val-name" placeholder="Tu Nombre completo" required class="w-full bg-white border border-slate-200 rounded-2xl px-4 py-3.5 text-xs text-[#1d1d1f] placeholder-slate-400 focus:outline-none focus:border-black shadow-sm font-medium">
+                                <input type="tel" id="val-phone" placeholder="Teléfono móvil de contacto" required class="w-full bg-white border border-slate-200 rounded-2xl px-4 py-3.5 text-xs text-[#1d1d1f] placeholder-slate-400 focus:outline-none focus:border-black shadow-sm font-medium">
+                            </div>
+
+                            <button type="submit" id="btn-submit-val" class="w-full bg-[#1d1d1f] hover:bg-black text-white font-extrabold text-xs sm:text-sm py-4 rounded-full shadow-lg transition active:scale-95 flex items-center justify-center gap-2">
+                                <span>Solicitar Visita Técnica y Valoración Oficial</span> &rarr;
+                            </button>
+                        </form>
+
+                        <div id="valuation-success" class="hidden mt-4 p-5 bg-emerald-50 border border-emerald-200 rounded-2xl text-emerald-900 text-xs space-y-2">
+                            <p class="font-bold text-sm flex items-center gap-2">
+                                <span>✅</span> Solicitud de Tasación Oficial Registrada
+                            </p>
+                            <p>Hemos derivado tu solicitud con máxima prioridad al director comercial de zona. Te contactaremos en menos de 2 horas para coordinar la visita técnica gratuita.</p>
+                            <a href="/dashboard" class="inline-block font-extrabold text-emerald-700 hover:underline">Ver ficha en el CRM Comercial &rarr;</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer with REAL Agency Information -->
+    <footer class="bg-[#f5f5f7] text-[#86868b] py-20 text-xs border-t border-black/5 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+                <!-- Col 1 -->
+                <div class="md:col-span-4 space-y-3">
+                    <div class="flex items-center gap-3">
+                        <img src="/static/logo_consulting.png" alt="Logo Consulting" class="h-8 object-contain">
+                        <span class="text-[#1d1d1f] font-extrabold text-sm">Consulting Inmobiliario de Villaviciosa</span>
+                    </div>
+                    <p class="text-xs max-w-sm leading-relaxed">
+                        <em>"El tiempo que empleamos es para ahorrárselo a otros."</em> Agencia inmobiliaria de referencia en Villaviciosa de Odón desde 1998.
+                    </p>
+                </div>
+
+                <!-- Col 2: Servicios -->
+                <div class="md:col-span-2 space-y-2">
+                    <p class="text-[#1d1d1f] font-bold uppercase tracking-wider text-[11px]">Servicios</p>
+                    <ul class="space-y-1.5 text-xs text-[#86868b]">
+                        <li><a href="#inmuebles" class="hover:text-black transition">Catálogo en Venta</a></li>
+                        <li><a href="/vender" class="hover:text-black transition">Vender mi Inmueble</a></li>
+                        <li><a href="/alquilar" class="hover:text-black transition">Alquiler Seguro</a></li>
+                        <li><a href="/quienes-somos" class="hover:text-black transition">Quiénes Somos</a></li>
+                        <li><a href="/contacto" class="hover:text-black transition">Dónde Estamos</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3 -->
+                <div class="md:col-span-3 space-y-2">
+                    <p class="text-[#1d1d1f] font-bold uppercase tracking-wider text-[11px]">Sede Central</p>
+                    <p class="leading-relaxed">
+                        Centro Comercial VillaCenter, local B26<br>
+                        Avda. Príncipe de Asturias, 129<br>
+                        28670 Villaviciosa de Odón (Madrid)
+                    </p>
+                </div>
+
+                <!-- Col 4 -->
+                <div class="md:col-span-3 space-y-2">
+                    <p class="text-[#1d1d1f] font-bold uppercase tracking-wider text-[11px]">Contacto Directo</p>
+                    <p class="font-bold text-[#1d1d1f]">📞 916 165 195</p>
+                    <p class="font-bold text-[#1d1d1f]">📱 611 031 014</p>
+                    <p>✉️ info@consultingvillaviciosa.com</p>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-black/5 flex flex-col sm:flex-row justify-between items-center gap-4 text-[11px]">
+                <p>© 2026 Consulting Inmobiliario de Villaviciosa de Odón. Todos los derechos reservados.</p>
+                <a href="/dashboard" class="text-black font-extrabold hover:underline">Panel de Control CRM &rarr;</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ======================================================== -->
+    <!-- FLOATING WHATSAPP SIMULATOR (iOS Light Style)            -->
+    <!-- ======================================================== -->
+    <div class="fixed bottom-6 right-6 z-50 flex items-center gap-3">
+        <div id="chat-badge" class="bg-white text-[#1d1d1f] text-xs font-bold py-2 px-4 rounded-full shadow-2xl border border-slate-200 hidden sm:block animate-bounce">
+            💬 ¿Buscas chalet en Villaviciosa? ¡Te atiendo en 10s!
+        </div>
+        <button onclick="toggleChat()" class="w-16 h-16 rounded-full bg-emerald-500 hover:bg-emerald-400 text-white shadow-2xl flex items-center justify-center transform hover:scale-105 active:scale-95 transition">
+            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+        </button>
+    </div>
+
+    <!-- WhatsApp Window Modal (Native iOS Light UI) -->
+    <div id="chat-window" class="fixed bottom-24 right-4 sm:right-6 z-50 w-[94vw] sm:w-[420px] h-[600px] bg-[#f0f2f5] rounded-[2.5rem] shadow-2xl border border-slate-200 flex flex-col overflow-hidden hidden transform transition-all duration-300 scale-95 opacity-0">
+        
+        <!-- Header -->
+        <div class="bg-white/95 backdrop-blur-xl text-[#1d1d1f] p-4 flex items-center justify-between border-b border-slate-200">
+            <div class="flex items-center gap-3">
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=120&q=80" class="w-10 h-10 rounded-full object-cover border border-emerald-500">
+                    <span class="absolute bottom-0 right-0 w-3 h-3 bg-emerald-500 border-2 border-white rounded-full"></span>
+                </div>
+                <div>
+                    <h4 class="font-extrabold text-sm leading-tight text-[#1d1d1f]">Sofía • Consulting Villaviciosa</h4>
+                    <p class="text-[11px] text-emerald-600 font-semibold">En línea • Asistente 24/7</p>
+                </div>
+            </div>
+            <div class="flex items-center gap-2">
+                <a href="/dashboard" target="_blank" title="Ver en CRM" class="bg-slate-100 rounded-lg px-2.5 py-1 text-slate-700 text-xs font-bold hover:bg-slate-200 transition">
+                    CRM
+                </a>
+                <button onclick="toggleChat()" class="text-slate-400 hover:text-black p-1 text-xl font-bold">&times;</button>
+            </div>
+        </div>
+
+        <!-- Chat Messages Container -->
+        <div id="messages-container" class="flex-1 p-4 overflow-y-auto space-y-3 bg-[#efeae2]">
+        </div>
+
+        <!-- Quick Reply Buttons Container -->
+        <div id="buttons-container" class="p-2.5 bg-white/90 backdrop-blur-md border-t border-slate-200 flex flex-wrap gap-1.5 max-h-36 overflow-y-auto">
+        </div>
+
+        <!-- Chat Input Field -->
+        <form id="chat-form" onsubmit="handleSend(event)" class="bg-white p-3 flex items-center gap-2 border-t border-slate-200">
+            <input type="text" id="chat-input" placeholder="Pregunta por un chalet, tasación u honorarios..." class="flex-1 bg-slate-100 text-[#1d1d1f] text-xs sm:text-sm px-4 py-2.5 rounded-full border border-slate-200 focus:outline-none focus:border-black placeholder-slate-400">
+            <button type="submit" class="w-10 h-10 rounded-full bg-emerald-500 hover:bg-emerald-600 text-white flex items-center justify-center transition shadow shrink-0">
+                <svg class="w-4 h-4 transform rotate-45 -translate-y-0.5 -translate-x-0.5" fill="currentColor" viewBox="0 0 20 20"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"/></svg>
+            </button>
+        </form>
+    </div>
+
+    <!-- Interactive Scripts -->
+    <script>
+        const sessionId = "session_" + Math.random().toString(36).substring(2, 9);
+        let chatOpen = false;
+
+        function toggleChat() {
+            const win = document.getElementById("chat-window");
+            chatOpen = !chatOpen;
+            if (chatOpen) {
+                win.classList.remove("hidden");
+                setTimeout(() => {
+                    win.classList.remove("scale-95", "opacity-0");
+                    win.classList.add("scale-100", "opacity-100");
+                }, 10);
+                if (document.getElementById("messages-container").children.length === 0) {
+                    sendToBot("Hola");
+                }
+            } else {
+                win.classList.remove("scale-100", "opacity-100");
+                win.classList.add("scale-95", "opacity-0");
+                setTimeout(() => win.classList.add("hidden"), 300);
+            }
+        }
+
+        function openPropertyChat(propTitle) {
+            if (!chatOpen) toggleChat();
+            setTimeout(() => {
+                sendToBot(`Quiero información y visitar ${propTitle}`);
+            }, 300);
+        }
+
+        async function sendToBot(text) {
+            appendMessage("user", text);
+            document.getElementById("chat-input").value = "";
+            renderButtons([]);
+
+            const typingId = appendTypingIndicator();
+
+            try {
+                const res = await fetch("/api/chat", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ session_id: sessionId, message: text })
+                });
+                const data = await res.json();
+                
+                removeTypingIndicator(typingId);
+                appendMessage("bot", data.text);
+                renderButtons(data.buttons || []);
+            } catch (err) {
+                removeTypingIndicator(typingId);
+                appendMessage("bot", "Disculpa, ha habido un problema de conexión temporal.");
+            }
+        }
+
+        function handleSend(e) {
+            e.preventDefault();
+            const val = document.getElementById("chat-input").value.trim();
+            if (val) sendToBot(val);
+        }
+
+        function appendMessage(sender, text) {
+            const container = document.getElementById("messages-container");
+            const div = document.createElement("div");
+            div.className = sender === "user" ? "flex justify-end" : "flex justify-start";
+
+            const now = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+
+            let formattedText = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+            formattedText = formattedText.replace(/\n/g, '<br>');
+
+            div.innerHTML = `
+                <div class="max-w-[85%] rounded-2xl px-4 py-2.5 text-xs sm:text-sm shadow-sm ${
+                    sender === "user" 
+                    ? "bg-[#dcf8c6] text-[#1d1d1f] rounded-tr-none" 
+                    : "bg-white text-[#1d1d1f] rounded-tl-none border border-slate-200"
+                }">
+                    <div class="leading-relaxed">${formattedText}</div>
+                    <div class="text-[9px] text-[#86868b] text-right mt-1">${now}</div>
+                </div>
+            `;
+            container.appendChild(div);
+            container.scrollTop = container.scrollHeight;
+        }
+
+        function appendTypingIndicator() {
+            const container = document.getElementById("messages-container");
+            const id = "typing-" + Date.now();
+            const div = document.createElement("div");
+            div.id = id;
+            div.className = "flex justify-start";
+            div.innerHTML = `
+                <div class="bg-white border border-slate-200 rounded-2xl rounded-tl-none px-4 py-2 text-xs text-[#86868b] shadow-sm flex items-center gap-1.5">
+                    <span>Sofía está escribiendo</span>
+                    <span class="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-bounce"></span>
+                    <span class="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-bounce [animation-delay:0.2s]"></span>
+                    <span class="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-bounce [animation-delay:0.4s]"></span>
+                </div>
+            `;
+            container.appendChild(div);
+            container.scrollTop = container.scrollHeight;
+            return id;
+        }
+
+        function removeTypingIndicator(id) {
+            const el = document.getElementById(id);
+            if (el) el.remove();
+        }
+
+        function renderButtons(buttons) {
+            const box = document.getElementById("buttons-container");
+            box.innerHTML = "";
+            if (!buttons || buttons.length === 0) {
+                box.classList.add("hidden");
+                return;
+            }
+            box.classList.remove("hidden");
+            buttons.forEach(btn => {
+                const b = document.createElement("button");
+                b.className = "bg-white hover:bg-black hover:text-white text-[#1d1d1f] font-bold text-xs py-2 px-3.5 rounded-full border border-slate-200 shadow-sm transition active:scale-95";
+                b.innerText = btn;
+                b.onclick = () => sendToBot(btn);
+                box.appendChild(b);
+            });
+        }
+
+        // ========================================================
+        // HORIZONTAL SCROLL CAROUSEL INTERACTION (Exact Step Scroll)
+        // ========================================================
+        const carousel = document.getElementById("carousel-container");
+        const progress = document.getElementById("carousel-progress");
+        const counterEl = document.getElementById("carousel-counter");
+
+        function scrollCarousel(dir) {
+            const firstCard = carousel.querySelector(".property-card:not([style*='display: none'])");
+            const cardStep = firstCard ? (firstCard.offsetWidth + 24) : 380;
+            carousel.scrollBy({ left: cardStep * dir, behavior: 'smooth' });
+        }
+
+        function updateCarouselState() {
+            const maxScroll = carousel.scrollWidth - carousel.clientWidth;
+            const firstCard = carousel.querySelector(".property-card:not([style*='display: none'])");
+            const cardWidth = firstCard ? (firstCard.offsetWidth + 24) : 1;
+            
+            const visibleCards = window.innerWidth >= 1024 ? 3 : (window.innerWidth >= 640 ? 2 : 1);
+            const allCards = carousel.querySelectorAll(".property-card:not([style*='display: none'])");
+            const total = allCards.length;
+
+            const currentIndex = Math.min(total - visibleCards, Math.max(0, Math.round(carousel.scrollLeft / cardWidth)));
+            const startNum = Math.min(total, currentIndex + 1);
+            const endNum = Math.min(total, currentIndex + visibleCards);
+
+            if (counterEl) {
+                counterEl.innerText = `Inmuebles ${startNum}–${endNum} de ${total}`;
+            }
+
+            if (maxScroll > 0) {
+                const pct = (carousel.scrollLeft / maxScroll) * 100;
+                progress.style.width = Math.max(12, pct) + "%";
+            } else {
+                progress.style.width = "100%";
+            }
+        }
+
+        carousel.addEventListener("scroll", updateCarouselState);
+        window.addEventListener("resize", updateCarouselState);
+        setTimeout(updateCarouselState, 200);
+
+        // ========================================================
+        // PROPERTIES FILTERING
+        // ========================================================
+        function filterPropertyType(type) {
+            document.querySelectorAll(".prop-filter-btn").forEach(b => {
+                b.classList.remove("bg-[#1d1d1f]", "text-white");
+                b.classList.add("bg-[#f5f5f7]", "text-[#1d1d1f]");
+            });
+
+            const cards = document.querySelectorAll(".property-card");
+            cards.forEach(card => {
+                if (type === 'all' || card.dataset.type === type) {
+                    card.style.display = "";
+                } else {
+                    card.style.display = "none";
+                }
+            });
+
+            if (type === 'all') document.getElementById('btn-filter-all').classList.add("bg-[#1d1d1f]", "text-white");
+            else if (type.includes('Independiente')) document.getElementById('btn-filter-indep').classList.add("bg-[#1d1d1f]", "text-white");
+            else if (type.includes('Pareado')) document.getElementById('btn-filter-pareado').classList.add("bg-[#1d1d1f]", "text-white");
+            else if (type.includes('Ático')) document.getElementById('btn-filter-atico').classList.add("bg-[#1d1d1f]", "text-white");
+        }
+
+        function filterByZone(zoneName) {
+            const cards = document.querySelectorAll(".property-card");
+            cards.forEach(card => {
+                if (card.dataset.zone.includes(zoneName)) {
+                    card.style.display = "";
+                } else {
+                    card.style.display = "none";
+                }
+            });
+            document.getElementById("inmuebles").scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // ========================================================
+        // APPLE LIGHT CONFIGURATOR LIVE VALUATION
+        // ========================================================
+        function selectConfigZone(zone, el) {
+            document.querySelectorAll(".zone-pill").forEach(p => {
+                p.classList.remove("bg-[#1d1d1f]", "text-white");
+                p.classList.add("bg-white", "text-[#1d1d1f]");
+            });
+            el.classList.remove("bg-white", "text-[#1d1d1f]");
+            el.classList.add("bg-[#1d1d1f]", "text-white");
+            document.getElementById("val-zone").value = zone;
+            recalculateLiveValuation();
+        }
+
+        function selectConfigType(type, el) {
+            document.querySelectorAll(".type-pill").forEach(p => {
+                p.classList.remove("bg-[#1d1d1f]", "text-white");
+                p.classList.add("bg-white", "text-[#1d1d1f]");
+            });
+            el.classList.remove("bg-white", "text-[#1d1d1f]");
+            el.classList.add("bg-[#1d1d1f]", "text-white");
+            document.getElementById("val-type").value = type;
+            recalculateLiveValuation();
+        }
+
+        function updateAreaSlider(val) {
+            document.getElementById("area-val-badge").innerText = val + " m²";
+            recalculateLiveValuation();
+        }
+
+        function recalculateLiveValuation() {
+            const zone = document.getElementById("val-zone").value;
+            const area = parseInt(document.getElementById("val-area").value);
+            const condition = document.getElementById("val-condition").value;
+
+            const zoneRates = {
+                "El Bosque": 2650,
+                "Campodón": 2300,
+                "Castillo": 2400,
+                "Casco Urbano": 2350
+            };
+            const baseRate = zoneRates[zone] || 2400;
+
+            let mult = 1.0;
+            if (condition === "Excelente / Lujo") mult = 1.18;
+            else if (condition === "A reformar") mult = 0.82;
+
+            const est = Math.round(area * baseRate * mult);
+            const minVal = Math.round(est * 0.94);
+            const maxVal = Math.round(est * 1.06);
+
+            document.getElementById("live-valuation-text").innerText = 
+                minVal.toLocaleString("es-ES") + " € – " + maxVal.toLocaleString("es-ES") + " €";
+            document.getElementById("live-rate-text").innerText = 
+                "~" + Math.round(baseRate * mult).toLocaleString("es-ES") + " €/m²";
+        }
+
+        async function submitValuation(e) {
+            e.preventDefault();
+            const btn = document.getElementById("btn-submit-val");
+            btn.disabled = true;
+            btn.innerText = "Registrando tasación...";
+
+            const payload = {
+                zone: document.getElementById("val-zone").value,
+                property_type: document.getElementById("val-type").value,
+                area_m2: parseInt(document.getElementById("val-area").value),
+                condition: document.getElementById("val-condition").value,
+                name: document.getElementById("val-name").value,
+                phone: document.getElementById("val-phone").value
+            };
+
+            try {
+                const res = await fetch("/api/valuation", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(payload)
+                });
+                const data = await res.json();
+                
+                document.getElementById("valuation-success").classList.remove("hidden");
+                btn.innerText = "✅ Tasación Registrada con Éxito";
+                btn.classList.add("bg-emerald-600");
+            } catch (err) {
+                alert("Error al enviar la solicitud.");
+                btn.disabled = false;
+                btn.innerText = "Reintentar";
+            }
+        }
+
+        // ========================================================
+        // INTERSECTION OBSERVER FOR NUMBER ROLL-UP ANIMATION
+        // ========================================================
+        const counterSection = document.getElementById("metrics-counters");
+        let countersAnimated = false;
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !countersAnimated) {
+                    countersAnimated = true;
+                    animateCounters();
+                }
+            });
+        }, { threshold: 0.5 });
+
+        if (counterSection) observer.observe(counterSection);
+
+        function animateCounters() {
+            const counters = counterSection.querySelectorAll("[data-target]");
+            counters.forEach(c => {
+                const target = parseInt(c.dataset.target);
+                let current = 0;
+                const increment = Math.ceil(target / 40);
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        current = target;
+                        clearInterval(timer);
+                    }
+                    if (target === 45) c.innerText = "+" + current + "M €";
+                    else if (target === 15) c.innerText = "< " + current + "s";
+                    else if (target === 98) c.innerText = current + "%";
+                }, 30);
+            });
+        }
+
+        // Initialize calculation on load
+        recalculateLiveValuation();
+    </script>
+</body>
+</html>
